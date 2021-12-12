@@ -504,10 +504,7 @@ async function isItemInStock(
       requireVisible: true,
       type: 'outerHTML' as const,
     };
-    
-    if (
-      await pageIncludesLabels(page, store.labels.usedStock, options)
-    ) {
+    if (await pageIncludesLabels(page, store.labels.usedStock, options)) {
       logger.warn(Print.usedStock(link, store, true));
       return false;
     }

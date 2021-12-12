@@ -30,7 +30,7 @@ async function restartMain() {
 async function main() {
   browser = await launchBrowser();
 
-  const page = await browser.newPage()
+  const page = await browser.newPage();
 
   for (const store of storeList.values()) {
     logger.debug('store links', {meta: {links: store.links}});

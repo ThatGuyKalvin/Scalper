@@ -167,7 +167,6 @@ function loadProxyList(filename: string): string[] | undefined {
       .trim()
       .split('\n')
       .map(x => x.trim());
-      
   } catch {
     return undefined;
   }
