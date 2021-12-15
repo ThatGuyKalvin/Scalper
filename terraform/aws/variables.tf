@@ -16,6 +16,12 @@ variable "region" {
   default = "eu-west-2"
 }
 
+variable "service_count" {
+  type = number
+  default = 3
+  description = "number of services (each using unique config)"
+}
+
 variable "app_name" {
   type = string
   default = "streetmerchant"
@@ -37,6 +43,12 @@ variable "streetmerchant_env" {
   type = map
   description = "name/value pairs for .env values"
   default = {}
+}
+
+variable "all_configs" {
+  type = list(map(string))
+
+  description = "all the configuration objects"
 }
 
 variable "ecs_task_execution_role_name" {

@@ -76,6 +76,14 @@ export const Awd: Store = {
         series: '3090',
         url: 'https://www.awd-it.co.uk/components/graphics-cards/nvidia/nvidia-geforce-rtx-3090.html',
       },
+      {
+        series: '3070ti',
+        url: 'https://www.awd-it.co.uk/components/graphics-cards/nvidia/nvidia-geforce-rtx-3070-ti.html',
+      },
+      {
+        series: '3080ti',
+        url: 'https://www.awd-it.co.uk/components/graphics-cards/nvidia/nvidia-geforce-rtx-3080-ti.html',
+      },
     ],
   },
   name: 'awd',

@@ -403,7 +403,7 @@ if (process.env.MAX_PRICE) {
 
 const store = {
   autoAddToCart: envOrBoolean(process.env.AUTO_ADD_TO_CART, true),
-  country: envOrString(process.env.COUNTRY, 'usa'),
+  country: envOrString(process.env.COUNTRY, 'uk'),
   maxPrice: {
     series: {
       3060: envOrNumber(process.env.MAX_PRICE_SERIES_3060),

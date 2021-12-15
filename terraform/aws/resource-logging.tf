@@ -4,7 +4,7 @@ resource "aws_cloudwatch_log_group" "main" {
 }
 
 locals {
-  stores = split(",",var.streetmerchant_env["STORES"])
+  stores = split(",",var.all_configs[1]["STORES"])
   metrics = {
     out_of_stock = [for store in local.stores : ["${var.app_name}-out-of-stock", store]]
     error = [for store in local.stores : ["${var.app_name}-error", store]]

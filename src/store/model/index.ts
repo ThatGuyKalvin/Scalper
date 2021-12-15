@@ -33,6 +33,7 @@ import {Argos} from './argos';
 import {ArgosIE} from './argos-ie';
 import {Aria} from './aria';
 import {Arlt} from './arlt';
+import {Asda} from './asda';
 import {Asus} from './asus';
 import {AsusDe} from './asus-de';
 import {AsusEs} from './asus-es';
@@ -202,6 +203,7 @@ export const storeList = new Map([
   [ArgosIE.name, Argos],
   [Aria.name, Aria],
   [Arlt.name, Arlt],
+  [Asda.name, Asda],
   [Asus.name, Asus],
   [AsusDe.name, AsusDe],
   [AsusEs.name, AsusEs],

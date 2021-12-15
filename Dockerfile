@@ -1,6 +1,6 @@
 FROM node:16.6.1-alpine3.13 AS builder
 
-LABEL org.opencontainers.image.source="https://github.com/jef/streetmerchant"
+LABEL org.opencontainers.image.source="https://github.com/thatguykalvin/scalper"
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
@@ -35,6 +35,7 @@ WORKDIR /app
 COPY --from=builder /build/node_modules/ node_modules/
 COPY --from=builder /build/build/ build/
 COPY web/ web/
+COPY global.proxies global.proxies
 COPY package.json package.json
 
 ENTRYPOINT ["npm", "run"]

@@ -3,7 +3,8 @@ resource "aws_ecs_cluster" "main" {
 }
 
 resource "aws_ecs_service" "main" {
-  name = "${var.app_name}-ecs-service"
+  count = var.service_count
+  name = "${var.app_name}-ecs-service-${count.index}"
   cluster = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.main.id
   desired_count = 1
@@ -40,8 +41,11 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution_role" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
+
 locals {
-  container_env = [for k, v in var.streetmerchant_env : { name: k, value: v}]
+  service_config = [for k, v in var.all_configs[0] : { name: k, value: v}]
+  container_env = [for k, v in local.service_config : { name: k, value: v}]
+  old_config = [for k, v in var.streetmerchant_env : { name: k, value: v}]
 }
 
 resource "aws_ecs_task_definition" "main" {
@@ -51,7 +55,7 @@ resource "aws_ecs_task_definition" "main" {
     "region": var.region
     "cpu": var.cpu
     "memory": parseint(var.memory,10)
-    "environment": jsonencode(local.container_env)
+    "environment": jsonencode(local.service_config)
   })
   family = var.app_name
   requires_compatibilities = ["FARGATE"]

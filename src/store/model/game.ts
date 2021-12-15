@@ -12,8 +12,8 @@ export const Game: Store = {
       euroFormat: false,
     },
     outOfStock: {
-      container: '.buyingOptions',
-      text: ['out of stock'],
+      container: '.basket-warning > p',
+      text: ['out of stock', 'Your add to basket request was not completed because we are currently out of stock.'],
     },
   },
   links: [
@@ -35,11 +35,17 @@ export const Game: Store = {
       series: 'sonyps5de',
       url: 'https://www.game.co.uk/en/playstation-5-digital-edition-2826341',
     },
+    // {
+    //   brand: 'microsoft',
+    //   model: 'xbox series x',
+    //   series: 'xboxsx',
+    //   url: 'https://www.game.co.uk/en/xbox-series-x-2831406',
+    // },
     {
       brand: 'microsoft',
       model: 'xbox series x',
       series: 'xboxsx',
-      url: 'https://www.game.co.uk/en/xbox-series-x-2831406',
+      url: 'https://www.game.co.uk/webapp/wcs/stores/servlet/OrderChangeServiceItemAdd?updateable=0&langId=44&catEntryId_1=2831407&quantity=1&contractId=&URL=AjaxMiniShoppingBagView&page=pdpPage&catalogId=10201&errorViewName=AjaxActionErrorResponse&calculationUsage=-1%2C-2%2C-3%2C-4%2C-5%2C-6%2C-7&storeId=10151&productId_1=2831407&partNumber=800821&mediaId=800821',
     },
     {
       brand: 'microsoft',

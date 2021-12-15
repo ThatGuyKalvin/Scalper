@@ -1,7 +1,7 @@
 [
   {
     "name": "${name}-task",
-    "image": "ghcr.io/jef/streetmerchant:latest",
+    "image": "620888147067.dkr.ecr.eu-west-2.amazonaws.com/streetmerchant:latest",
     "cpu": ${cpu},
     "memory": ${memory},
     "essential": true,
